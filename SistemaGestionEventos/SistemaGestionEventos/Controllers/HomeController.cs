@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SistemaGestionEventos.Models;
 using System.Diagnostics;
+using System.Diagnostics.Contracts;
 
 namespace SistemaGestionEventos.Controllers
 {
@@ -19,6 +20,16 @@ namespace SistemaGestionEventos.Controllers
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult CentroDeEventos() 
+        {
+            return View();
+        }
+
+        public IActionResult MisEventos() 
         {
             return View();
         }
