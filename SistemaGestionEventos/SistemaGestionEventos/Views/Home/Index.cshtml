@@ -5,7 +5,7 @@
 @*Titulo y logo*@
 <div class="encabezado_box">
     <div class="row mb-5">
-        <div class="col mt-5 mb-5" style="text-align:center;">
+        <div class="col mt-5 mb-5 centrarHorizontal">
             <img src="~/media/logo-EventCentral.png" class="logoEventCentral" />
         </div>
         <div class="col miFuente centrarVertical">
@@ -36,7 +36,7 @@
     <div class="col mt-5 centrarVertical">
         <div>
             <h2 class="tamaño_SubTitulos">Puedes organizar todo tipo de eventos</h2>
-            <h4 class="tama">Espectáculos, Conferencias, Ferias, Exhibiciones, Eventos de caridad o recaudación de fondos </h4>
+            <h4 class="tamaño_Texto">Espectáculos, Conferencias, Ferias, Exhibiciones, Eventos de caridad o recaudación de fondos </h4>
         </div>
     </div>
 
@@ -46,19 +46,19 @@
 </div>
 
 @*Botones para funciones*@
-<div class="encabezado_box mt-5 mb-5 miFuente" style="text-align:center;">
+<div class="encabezado_box mt-5 mb-5 miFuente centrarHorizontal">
     <div class="row">
         <div class="col mt-5 mb-5">
             <h2 class="tamaño_SubTitulos">Comienza a utilizar nuestro servicio.</h2>
         </div>
         <div class="row mb-5">
             <div class="col">
-                <h3>Ve al centro de eventos para administrar</h3>
-                <a class="btn botones_estilo_1">Centro De Eventos</a>
+                <h3>Ve al centro de eventos para comenzar</h3>
+                <a asp-action="CentroDeEventos" class="btn botones_estilo_1 mt-3">Centro De Eventos <i class="bi bi-house-gear-fill"></i></a>
             </div>
             <div class="col">
                 <h3>Dale un vistaso a tus eventos</h3>
-                <a class="btn botones_estilo_1">Mis Eventos</a>
+                <a asp-action="MisEventos" class="btn botones_estilo_1 mt-3">Mis Eventos <i class="bi bi-card-list"></i></a>
             </div>
             
         </div>
@@ -74,8 +74,8 @@
 
     <div class="col mt-5 centrarVertical">
         <div>
-            <h2>Facil y Completo</h2>
-            <h4>Un sistema de gestion diseñado para ser simple pero al mismo tiempo 
+            <h2 class="tamaño_SubTitulos">Facil y Completo</h2>
+            <h4 class="tamaño_Texto">Un sistema de gestion diseñado para ser simple pero al mismo tiempo 
                 poder manipular la informacion de forma eficiente</h4>
         </div>
     </div>
@@ -84,8 +84,9 @@
 <div class="miFuente row" >
     <div class="col mt-5 centrarVertical">
         <div>
-            <h2>Para uso personal y profesional</h2>
-            <h4>Puedes usar Event Central como una agenda de eventos personales o como un gestor
+            <h2 class="tamaño_SubTitulos">Para uso personal y profesional</h2>
+            <h4 class="tamaño_Texto">
+                Puedes usar Event Central como una agenda de eventos personales o como un gestor
                 completo de eventos publicos y privados</h4>
         </div>
     </div>

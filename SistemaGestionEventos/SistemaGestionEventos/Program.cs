@@ -1,7 +1,13 @@
+using Microsoft.AspNetCore.Hosting.Builder;
+using SistemaGestionEventos.Servicios;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//Servicios personalisados
+builder.Services.AddTransient<IRepositorioTipoEvento, RepositorioTipoEvento>();
 
 var app = builder.Build();
 

@@ -18,12 +18,105 @@
 </div>
 
 @*Edicion de eventos*@
-<form>
-    <div class="encabezado_box_2 miFuente">
-        <div class="row mb-5 mt-5">
-            <div class="col">
-                <h3>texto prueba</h1>
+
+<div class="miFuente mt-5 mb-5">
+    <div class="row mb-5 mt-5">
+        <div class="col img_box_1">
+            <div class="mt-4">
+                <h3 class="tamaño_SubTitulos">Eventos <i class="bi bi-calendar2-event-fill"></i></h3>
+                <p class="tamaño_Texto">
+                    Crea un nuevo evento desde 0 o tambien puedes editar tus eventos ya existentes
+                    en la lista de control.
+                </p>
+                <div style="text-align:center;">
+                    <a class="btn botones_estilo_2 miFuente">Eventos</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col centrarHorizontal">
+            <img src="~/media/Eventos.png" alt="Persona en EventCentral" class="img_box_Circular_1"></img>
+        </div>
+
+    </div>
+</div>
+
+
+@*Edicion de Tipo de eventos*@
+
+<div class="miFuente mt-5 mb-5">
+    <div class="row mb-5 mt-5">
+        <div class="col">
+            <div>
+                <img src="~/media/eventoPublico.jpg" class="img_box_Circular_1"></img>
+                <img src="~/media/EventoPrivado.jpg" class="img_box_Circular_1" 
+                style="margin-top:-370px; margin-left:250px;"></img>
+            </div>
+        </div>
+
+        <div class="col img_box_2">
+            <div class="mt-4">
+                <h3 class="tamaño_SubTitulos">Tipos de eventos <i class="bi bi-archive-fill"></i></h3>
+                <p class="tamaño_Texto">
+                    Event Central ya cuenta con una seria de categorias para los diferentes tipos de eventos
+                    pero tambien puedes crear tus propios tipos de eventos personalisados
+                </p>
+                <div style="text-align:center;">
+                    <a asp-controller="TipoEvento" asp-action="Index" class="btn botones_estilo_2 miFuente">
+                        Tipos de eventos</a>
+                </div>
             </div>
         </div>
     </div>
-</form>
+</div>
+
+
+@*Ubicaciones*@
+
+<div class="miFuente mt-5 mb-5">
+        <div class="row mb-5 mt-5">
+            <div class="col img_box_3">
+                <div class="mt-4">
+                    <h3 class="tamaño_SubTitulos">Ubicaciones <i class="bi bi-globe-americas"></i></h3>
+                    <p class="tamaño_Texto">
+                        Puedes almacenar los datos referentes a ubicaciones especificas como teatros,
+                        galerias de arte, centros publicos, etc.
+                    </p>
+                    <div style="text-align:center;">
+                        <a class="btn botones_estilo_2 miFuente">Ubicaciones</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col centrarHorizontal">
+                <img src="~/media/mapa.png" class="img_box_Circular_1"></img>
+            </div>
+        </div>
+</div>
+
+
+@*Patrocinadores*@
+
+<div class="miFuente mt-5 mb-5">
+    <div class="row mb-5 mt-5">
+        <div class="col centrarHorizontal">
+            <img src="~/media//patrocinadores.jpg" class="img_box_Circular_1"></img>
+        </div>
+
+        <div class="col img_box_4">
+            <div class="mt-4">
+                <h3 class="tamaño_SubTitulos">Patrocinadores <i class="bi bi-wallet-fill"></i></h3>
+                <p class="tamaño_Texto">
+                    Si tu evento cuanta con patrocinadores puedes almacenar sus datos como contacto, Nombre de la empresa,
+                    persona u organizacion y formas de contacto.
+                </p>
+                <div style="text-align:center;">
+                    <a class="btn botones_estilo_2 miFuente">Patrocinadores</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*Usuarios*@

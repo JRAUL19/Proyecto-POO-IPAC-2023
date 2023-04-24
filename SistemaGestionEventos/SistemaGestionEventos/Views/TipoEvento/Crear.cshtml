@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Tipo de evento - Crear";
+}
+@model TipoEvento
+
+<div class="encabezado_box row">
+    <h1 class="col miFuente tamaño_Titulos mt-5 mb-5 centrarHorizontal">
+        Crear tipo de evento <i class="bi bi-plus-circle-dotted"></i>
+    </h1>
+</div>
+
+<div asp-validation-summary="ModelOnly" class="text-light"></div>
+
+<form asp-controller="TipoEvento" asp-action="Crear">
+    <div class="mb-3 mt-3">
+        <label class="miFuente form-label" asp-for="Nombre"></label>
+        <input asp-for="Nombre" class="form-control" placeholder="Nombre del tipo de evento"></input>
+        <span asp-validation-for="Nombre" class="text-light"></span>
+    </div>
+
+    <div class="mb-3 mt-3">
+        <label class="miFuente" asp-for="Descripcion">Descripcion:</label>
+        <textarea asp-for="Descripcion" class="form-control" type="text" placeholder="Descripcion"></textarea>
+    </div>
+
+    <button class="btn botones_estilo_2" type="submit">Guardar <i class="bi bi-save"></i></button>
+    <a asp-action="Index" class="btn botones_estilo_1" style="margin-left:2rem;">Cancelar <i class="bi bi-backspace-fill"></i></a>
+</form>

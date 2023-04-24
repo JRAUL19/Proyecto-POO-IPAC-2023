@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Tipo de evento - Index";
+}
+@model IEnumerable<TipoEvento>
+
+@*Titulo y boton de crear*@
+<div class="row miFuente">
+    <div class="col encabezado_box">
+        <h1 class="tamaño_SubTitulos">Tipos de eventos <i class="bi bi-archive-fill"></i></h1>
+    <p class="tamaño_Texto">Puedes ver los tipos de eventos disponibles y personalisarlos o tambien puedes crear uno nuevo</p>
+    </div>
+
+    <div class="col">
+        <h2 class="tamaño_SubTitulos">Crea tus propios tipos de eventos</h2>
+        <a asp-action="Crear" class="btn botones_estilo_2">Crear <i class="bi bi-plus-circle-dotted"></i></a>
+    </div>
+</div>
+
+
+
+@*Tabla de tipos de eventos*@
+<table class="table estilo_tabla mt-5 mb-5">
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>Tipo de evento</th>
+            <th>Descripcion</th>
+            <th>Edicion</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tipoEvento in Model)
+        {
+            <tr>
+                <td>@tipoEvento.Id</td>
+                <td>@tipoEvento.Nombre</td>
+                <td>@tipoEvento.Descripcion</td>
+                <td>
+                    <input type="hidden" asp-for="@tipoEvento.Id" class="ids" />
+                    <a asp-action="Editar" asp-route-id="@tipoEvento.Id" class="btn miFuente"><i class="bi bi-pen-fill"></i></a>
+                    <a asp-action="Eliminar" asp-route-id="@tipoEvento.Id" class="btn miFuente"><i class="bi bi-trash3-fill"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
