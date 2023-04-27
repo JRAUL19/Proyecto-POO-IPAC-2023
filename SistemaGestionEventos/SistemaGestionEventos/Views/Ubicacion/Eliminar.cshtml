@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Ubicacion - Eliminar";
+}
+@model Ubicacion
+
+<form asp-action="EliminarConfirm">
+    <input asp-for="Id" type="hidden" />
+    <div class="miFuente">
+        <div class="row">
+            <div class="col centrarHorizontal encabezado_box">
+                <div class="mb-5 mt-5">
+                    <h1 class="tamaño_SubTitulos">Esta seguro de eliminar @("'" + Model.Nombre + ("'")) de tus ubicaciones</h1>
+                    <h5 class="tamaño_Texto ">Esta accion no se puede revertir</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col centrarHorizontal mt-5">
+                    <button class="btn botones_estilo_1" type="submit" style="margin-right:2rem;">Eliminar <i class="bi bi-trash3-fill"></i></button>
+                    <a asp-action="Index" class="btn botones_estilo_2">Cancelar <i class="bi bi-backspace-fill"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

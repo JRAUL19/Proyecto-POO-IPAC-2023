@@ -1,4 +1,5 @@
-﻿using Azure.Core;
+﻿using AutoMapper;
+using Azure.Core;
 using Microsoft.AspNetCore.Mvc;
 using SistemaGestionEventos.Models;
 using SistemaGestionEventos.Servicios;
@@ -8,11 +9,16 @@ namespace SistemaGestionEventos.Controllers
     public class TipoEventoController : Controller
     {
         private readonly IRepositorioTipoEvento repositorioTipoEvento;
+        private readonly IMapper mapper;
 
-        public TipoEventoController(IRepositorioTipoEvento repositorioTipoEvento
+
+        public TipoEventoController(
+            IRepositorioTipoEvento repositorioTipoEvento,
+            IMapper mapper
             )
         {
             this.repositorioTipoEvento = repositorioTipoEvento;
+            this.mapper = mapper;
         }
         
         //Vista principal
@@ -76,5 +82,41 @@ namespace SistemaGestionEventos.Controllers
             await repositorioTipoEvento.Eliminar(id);
             return RedirectToAction("Index");
         }
+
+        //Editar un tipo de evento
+        [HttpGet]
+        public async Task<IActionResult> Editar(int id) 
+        {
+            var tipoEvento = await repositorioTipoEvento.ObtenerPorId(id);
+
+            //var modelo = mapper.Map<TipoEventoCrearViewModel>(tipoEvento);
+            var editarTipoEvento = new EditarTipoEventoViewModel
+            {
+                Id = tipoEvento.Id,
+                Nombre = tipoEvento.Nombre,
+                Descripcion = tipoEvento.Descripcion,
+            };
+
+            if (tipoEvento is null)
+            {
+                return View("NotFound", "Home");
+            }
+
+            return View(editarTipoEvento);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Editar(EditarTipoEventoViewModel editarTipoEvento) 
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(editarTipoEvento);
+            }
+
+            await repositorioTipoEvento.Editar(editarTipoEvento);
+
+            return RedirectToAction("Index");
+        }
+
     }
 }

@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Event Center - Centro De Eventos";
+    ViewData["Title"] = "Event Central - Centro De Eventos";
 }
 
 @*Titulo y Presentacion*@
@@ -7,11 +7,12 @@
     <div class="row">
         <div class="col mt-5 mb-5" style="text-align:center;">
             <img src="~/media/logo-EventCentral.png" alt="logo del sistema" class="logoEventCentral mb-5"/>
-            <h3 class="tamaño_Titulos">Esto es el centro de gestion</h3>
+            <h4 class="tamaño_Titulos"><i class="bi bi-house-gear-fill"></i></h4>
+            <h3 class="tamaño_Titulos">Esto es el centro de eventos</h3>
             <p class="tamaño_Texto">
-                Aqui podras tener facil acceso a las funciones del sistema como crear un nuevo evento, administrar los datos de
-                los patrocinadores, usuarios, ubicaciones. Ademas de las funciones de edicion a tus eventos como editar, eliminar
-                y actualizar
+                Aquí podrás tener fácil acceso a las funciones del sistema como crear un nuevo evento,
+                administrar los datos de los patrocinadores, usuarios, ubicaciones.
+                Además de las funciones de edición a tus eventos como editar, eliminar y actualizar
             </p>
         </div>
     </div>
@@ -25,7 +26,7 @@
             <div class="mt-4">
                 <h3 class="tamaño_SubTitulos">Eventos <i class="bi bi-calendar2-event-fill"></i></h3>
                 <p class="tamaño_Texto">
-                    Crea un nuevo evento desde 0 o tambien puedes editar tus eventos ya existentes
+                    Crea un nuevo evento desde 0 o también puedes editar eventos ya existentes
                     en la lista de control.
                 </p>
                 <div style="text-align:center;">
@@ -58,8 +59,8 @@
             <div class="mt-4">
                 <h3 class="tamaño_SubTitulos">Tipos de eventos <i class="bi bi-archive-fill"></i></h3>
                 <p class="tamaño_Texto">
-                    Event Central ya cuenta con una seria de categorias para los diferentes tipos de eventos
-                    pero tambien puedes crear tus propios tipos de eventos personalisados
+                    Evento Central ya cuenta con una seria de categorías para los diferentes tipos de eventos,
+                    pero también puedes crear tus propios tipos de eventos personalizados.
                 </p>
                 <div style="text-align:center;">
                     <a asp-controller="TipoEvento" asp-action="Index" class="btn botones_estilo_2 miFuente">
@@ -83,7 +84,7 @@
                         galerias de arte, centros publicos, etc.
                     </p>
                     <div style="text-align:center;">
-                        <a class="btn botones_estilo_2 miFuente">Ubicaciones</a>
+                        <a asp-controller="Ubicacion" asp-action="Index" class="btn botones_estilo_2 miFuente">Ubicaciones</a>
                     </div>
                 </div>
             </div>
@@ -107,8 +108,8 @@
             <div class="mt-4">
                 <h3 class="tamaño_SubTitulos">Patrocinadores <i class="bi bi-wallet-fill"></i></h3>
                 <p class="tamaño_Texto">
-                    Si tu evento cuanta con patrocinadores puedes almacenar sus datos como contacto, Nombre de la empresa,
-                    persona u organizacion y formas de contacto.
+                    Si tu evento cuenta con patrocinadores puedes almacenar sus datos como el nombre de la empresa,
+                    persona u organizacion que te patrocinan y formas de contactar con ellos.
                 </p>
                 <div style="text-align:center;">
                     <a class="btn botones_estilo_2 miFuente">Patrocinadores</a>

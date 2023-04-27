@@ -59,5 +59,16 @@ namespace SistemaGestionEventos.Servicios
             return existe == 1;
         }
 
+        //Editar un tipo de evento
+        public async Task Editar(EditarTipoEventoViewModel tipoEvento)
+        {
+            using var connection = new SqlConnection(connectionString);
+            await connection.ExecuteAsync
+                (@"UPDATE TiposEventos 
+                SET Nombre = @Nombre, 
+                Descripcion = @Descripcion
+                WHERE Id = @Id", tipoEvento);
+        }
+
     }
 }

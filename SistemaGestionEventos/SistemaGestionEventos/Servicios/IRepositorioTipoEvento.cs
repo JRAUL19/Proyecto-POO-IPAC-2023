@@ -5,6 +5,7 @@ namespace SistemaGestionEventos.Servicios
     public interface IRepositorioTipoEvento
     {
         Task Crear(TipoEvento tipoEvento);
+        Task Editar(EditarTipoEventoViewModel tipoEvento);
         Task Eliminar(int id);
         Task<bool> Existe(string nombre);
         Task<IEnumerable<TipoEvento>> Obtener();

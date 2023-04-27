@@ -8,6 +8,11 @@ builder.Services.AddControllersWithViews();
 
 //Servicios personalisados
 builder.Services.AddTransient<IRepositorioTipoEvento, RepositorioTipoEvento>();
+builder.Services.AddTransient<IRepositorioUbicacion, RepositorioUbicacion>();
+
+
+//Paquete Nuget AutoMapper
+builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();
 

@@ -1,13 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 
 namespace SistemaGestionEventos.Models
 {
-    public class TipoEvento
+    public class EditarTipoEventoViewModel : TipoEvento
     {
-        public int Id { get; set; }
-
         [Display(Name = "Nombre")]
-        [Required (ErrorMessage = "El {0} es requerido")]
+        [Required(ErrorMessage = "El {0} es requerido")]
         [StringLength(maximumLength: 50)]
         public string Nombre { get; set; }
 

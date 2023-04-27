@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Ubicacion - Index";
+}
+@model IEnumerable<Ubicacion>
+
+@*Titulo y boton de crear*@
+<div class="row miFuente">
+    <div class="col encabezado_box">
+        <h1 class="tamaño_SubTitulos">Ubicaciones <i class="bi bi-geo-alt-fill"></i> </h1>
+        <p class="tamaño_Texto">
+            Almacena informacion de lugares donde se realizaran los eventos como la capacidad de personas,
+            servicios que ofrecen estos lugares y su ubicacion.
+        </p>
+    </div>
+
+    <div class="col">
+        <h2 class="tamaño_SubTitulos">Agregar una nueva ubicacion</h2>
+        <a asp-action="Crear" class="btn botones_estilo_2">
+            Nueva Ubicacion <i class="bi bi-plus-circle-dotted"></i>
+        </a>
+    </div>
+</div>
+
+
+
+@*Tabla de tipos de eventos*@
+<table class="table estilo_tabla mt-5 mb-5">
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>URL</th>
+            <th>Capacidad</th>
+            <th>Servicios</th>
+            <th>Descripcion</th>
+            <th>Edicion</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ubicacion in Model)
+        {
+            <tr>
+                <td>@ubicacion.Id</td>
+                <td>@ubicacion.Nombre</td>
+                <td>@ubicacion.Direccion</td>
+                <td>
+                    <a href="@ubicacion.DireccionUrl" target="_blank" class="removeLink">
+                        @ubicacion.Nombre
+                    </a>
+                </td>
+                <td>@ubicacion.CapacidadPersonas</td>
+                <td>@ubicacion.Servicios</td>
+                <td>@ubicacion.Descripcion</td>
+                <td>
+                    <input type="hidden" asp-for="@ubicacion.Id" class="ids" />
+                    <a asp-action="Editar" asp-route-id="@ubicacion.Id" class="btn miFuente"><i class="bi bi-pen-fill"></i></a>
+                    <a asp-action="Eliminar" asp-route-id="@ubicacion.Id" class="btn miFuente"><i class="bi bi-trash3-fill"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
