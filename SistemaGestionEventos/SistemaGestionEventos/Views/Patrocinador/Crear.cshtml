@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Patrocinadores - Crear";
+}
+@model Patrocinador
+
+
+<div class="encabezado_box row">
+    <h1 class="col miFuente tamaño_Titulos mt-5 mb-5 centrarHorizontal">
+        Nuevo patrocinador <i class="bi bi-wallet-fill"></i>
+    </h1>
+</div>
+
+
+<div asp-validation-summary="ModelOnly" class="text-light"></div>
+
+<form asp-action="Crear">
+    <div class="row">
+        <div class="col">
+            @*Nombre*@
+            <div class="mb-3 mt-3">
+                <label class="miFuente form-label" asp-for="Nombre"></label>
+                <input asp-for="Nombre" class="form-control" placeholder="Nombre de la empresa o persona"></input>
+                <span asp-validation-for="Nombre" class="text-light"></span>
+            </div>
+
+            @*Email*@
+            <div class="mb-3 mt-3">
+                <label class="miFuente form-label" asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" placeholder="Email de contacto"></input>
+                <span asp-validation-for="Email" class="text-light"></span>
+            </div>
+
+
+            @*Telefono*@
+            <div class="mb-3 mt-3">
+                <label class="miFuente form-label" asp-for="Telefono"></label>
+                <input asp-for="Telefono" class="form-control" placeholder="Telefono o celular"></input>
+                <span asp-validation-for="Telefono" class="text-light"></span>
+            </div>
+        </div>
+        
+        <div class="col">
+            @*Direccion*@
+            <div class="mb-3 mt-3">
+                <label class="miFuente form-label" asp-for="Direccion"></label>
+                <input asp-for="Direccion" class="form-control" placeholder="Direccion"></input>
+                <span asp-validation-for="Direccion" class="text-light"></span>
+            </div>
+
+            @*Descripcion*@
+            <div class="mb-3 mt-3">
+                <label class="miFuente form-label" asp-for="Descripcion"></label>
+                <textarea asp-for="Descripcion" class="form-control" type="text" placeholder="Informacion relevante del patrocinador">
+                </textarea>
+                <span asp-validation-for="Descripcion" class="text-light"></span>
+            </div>
+
+            <div class="mb-3 mt-3">
+                <button class="btn botones_estilo_2" type="submit">Guardar <i class="bi bi-save"></i></button>
+                <a asp-action="Index" class="btn botones_estilo_1" style="margin-left:2rem;">Cancelar <i class="bi bi-backspace-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</form>

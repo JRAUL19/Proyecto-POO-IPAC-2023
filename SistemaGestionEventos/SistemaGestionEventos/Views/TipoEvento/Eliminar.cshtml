@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Tipo de evento - Eliminar";
+    ViewData["Title"] = "Tipos de eventos - Eliminar";
 }
 @model TipoEvento
 
@@ -9,6 +9,9 @@
         <div class="row">
             <div class="col centrarHorizontal encabezado_box">
                 <div class="mb-5 mt-5">
+                    <h5 class="tamaño_Titulos">
+                        <i class="bi bi-exclamation-diamond-fill text-warning"></i>
+                    </h5>
                     <h1 class="tamaño_SubTitulos">Esta seguro de eliminar @("'" + Model.Nombre + ("'")) de tipos de eventos</h1>
                     <h5 class="tamaño_Texto ">Esta accion no se puede revertir</h5>
                 </div>

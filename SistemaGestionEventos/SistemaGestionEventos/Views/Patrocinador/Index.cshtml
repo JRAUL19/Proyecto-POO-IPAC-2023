@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Patrocinadores - Index";
+}
+@model IEnumerable<Patrocinador>
+
+@*Titulo y boton de crear*@
+<div class="row miFuente">
+    <div class="col encabezado_box">
+        <h1 class="tamaño_SubTitulos">Patrocinadores <i class="bi bi-wallet-fill"></i> </h1>
+        <p class="tamaño_Texto">
+            ¡Haz crecer tu evento! Maneja la información de tus patrocinadores en
+            una sola sección para que nunca pierdas de vista a los que impulsan tu éxito.
+        </p>
+    </div>
+
+    <div class="col">
+        <h2 class="tamaño_SubTitulos">Crea tus propios tipos de eventos</h2>
+        <a asp-action="Crear" class="btn botones_estilo_2">Crear <i class="bi bi-plus-circle-dotted"></i></a>
+
+        <a asp-controller="Home" asp-action="CentroDeEventos" class="btn botones_estilo_1">
+            Centro de eventos <i class="bi bi-backspace-fill"></i>
+        </a>
+    </div>
+</div>
+
+
+@*Mostrar tabla de patrocinadores*@
+
+<table class="table estilo_tabla mt-5 mb-5">
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th>Direccion</th>
+            <th>Descripcion</th>
+            <th>Edicion</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var patrocinador in Model)
+        {
+                <tr>
+                    <td>@patrocinador.Id</td>
+                    <td>@patrocinador.Nombre</td>
+                    <td>@patrocinador.Email</td>
+                    <td>@patrocinador.Telefono</td>
+                    <td>@patrocinador.Direccion</td>
+                    <td>@patrocinador.Descripcion</td>
+                    <td>
+                        <input type="hidden" asp-for="@patrocinador.Id" class="ids" />
+                        <a asp-action="Editar" asp-route-id="@patrocinador.Id" class="btn miFuente"><i class="bi bi-pen-fill"></i></a>
+                        <a asp-action="Eliminar" asp-route-id="@patrocinador.Id" class="btn miFuente"><i class="bi bi-trash3-fill"></i></a>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
+
+

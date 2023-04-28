@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Tipo de evento - Index";
+    ViewData["Title"] = "Tipos de eventos - Index";
 }
 @model IEnumerable<TipoEvento>
 
@@ -7,12 +7,18 @@
 <div class="row miFuente">
     <div class="col encabezado_box">
         <h1 class="tamaño_SubTitulos">Tipos de eventos <i class="bi bi-archive-fill"></i> </h1>
-        <p class="tamaño_Texto">Puedes ver los tipos de eventos disponibles y personalisarlos o tambien puedes crear uno nuevo</p>
+        <p class="tamaño_Texto">
+             Personaliza los existentes o crea uno nuevo para que se ajuste perfectamente a tus necesidades.
+             En esta sección podrás ver todas las opciones disponibles y editarlas a tu gusto.
+        </p>
     </div>
 
     <div class="col">
         <h2 class="tamaño_SubTitulos">Crea tus propios tipos de eventos</h2>
         <a asp-action="Crear" class="btn botones_estilo_2">Crear <i class="bi bi-plus-circle-dotted"></i></a>
+        <a asp-controller="Home" asp-action="CentroDeEventos" class="btn botones_estilo_1">
+            Centro de eventos <i class="bi bi-backspace-fill"></i>
+        </a>
     </div>
 </div>
 

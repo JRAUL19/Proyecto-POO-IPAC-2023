@@ -1,7 +1,7 @@
 ﻿@{
-    ViewData["Title"] = "Ubicaciones - Eliminar";
+    ViewData["Title"] = "Patrocinadores - Eliminar";
 }
-@model Ubicacion
+@model Patrocinador
 
 <form asp-action="EliminarConfirm">
     <input asp-for="Id" type="hidden" />
@@ -12,7 +12,7 @@
                     <h5 class="tamaño_Titulos">
                         <i class="bi bi-exclamation-diamond-fill text-warning"></i>
                     </h5>
-                    <h1 class="tamaño_SubTitulos">Esta seguro de eliminar @("'" + Model.Nombre + ("'")) de tus ubicaciones</h1>
+                    <h1 class="tamaño_SubTitulos">Esta seguro de eliminar @("'" + Model.Nombre + ("'")) de patrocinadores</h1>
                     <h5 class="tamaño_Texto ">Esta accion no se puede revertir</h5>
                 </div>
             </div>

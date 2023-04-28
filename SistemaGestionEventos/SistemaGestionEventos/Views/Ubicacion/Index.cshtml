@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Ubicacion - Index";
+    ViewData["Title"] = "Ubicaciones - Index";
 }
 @model IEnumerable<Ubicacion>
 
@@ -8,16 +8,23 @@
     <div class="col encabezado_box">
         <h1 class="tamaño_SubTitulos">Ubicaciones <i class="bi bi-geo-alt-fill"></i> </h1>
         <p class="tamaño_Texto">
-            Almacena informacion de lugares donde se realizaran los eventos como la capacidad de personas,
-            servicios que ofrecen estos lugares y su ubicacion.
+            Guarda toda la información que necesitas sobre ubicaciones y establecimientos para
+            tus próximos eventos. Mantén actualizada la capacidad de las instalaciones, los servicios
+            que ofrecen y su ubicación para brindar la mejor experiencia a tus invitados
         </p>
     </div>
 
     <div class="col">
         <h2 class="tamaño_SubTitulos">Agregar una nueva ubicacion</h2>
+
         <a asp-action="Crear" class="btn botones_estilo_2">
             Nueva Ubicacion <i class="bi bi-plus-circle-dotted"></i>
         </a>
+
+        <a asp-controller="Home" asp-action="CentroDeEventos" class="btn botones_estilo_1">
+            Centro de eventos <i class="bi bi-backspace-fill"></i>
+        </a>
+
     </div>
 </div>
 
