@@ -12,6 +12,8 @@ namespace SistemaGestionEventos.Servicios
             CreateMap<TipoEvento, TipoEventoCrearViewModel>();
 
             CreateMap<Ubicacion, UbicacionEditarViewModel>();
+
+            CreateMap<Evento, EventoCrearViewModel>();
         }
     }
 }

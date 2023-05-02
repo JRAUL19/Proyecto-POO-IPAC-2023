@@ -1,1 +1,81 @@
-﻿<h1>Editar</h1>
+﻿@{
+    ViewData["Title"] = "Eventos - Crear";
+}
+@model EventoCrearViewModel
+
+<div class="encabezado_box row mb-5">
+    <h1 class="col miFuente tamaño_Titulos mt-5 mb-5 centrarHorizontal">
+        Editar Evento <i class="bi bi-calendar-event-fill"></i> <i class="bi bi-pen-fill"></i>
+    </h1>
+</div>
+
+<div asp-validation-summary="ModelOnly" class="text-light"></div>
+
+<form asp-action="Editar">
+    <input asp-for="UsuarioId" type="hidden" value="@int.Parse("1")"></input>
+    <div class="row">
+        <div class="col">
+            @*Nombre*@
+            <div class="mb-3">
+                <label class="miFuente form-label" asp-for="Nombre"></label>
+                <input asp-for="Nombre" class="form-control" placeholder="Nombre del evento"></input>
+                <span asp-validation-for="Nombre" class="text-light"></span>
+            </div>
+
+            @*Ubicacion*@
+            <div class="mb-3">
+                <label asp-for="UbicacionId" class="form-label miFuente"></label>
+                <select asp-for="UbicacionId" asp-items="Model.UbicacionList" class="form-select"></select>
+                <span asp-validation-for="UbicacionId" class="text-danger"></span>
+            </div>
+
+            @*Tipo de evento*@
+            <div class="mb-3">
+                <label asp-for="TipoEventoId" class="form-label miFuente"></label>
+                <select asp-for="TipoEventoId" asp-items="Model.TipoEventoList" class="form-select"></select>
+                <span asp-validation-for="TipoEventoId" class="text-danger"></span>
+            </div>
+
+            @*Fecha Inicio*@
+            <div class="mb-3">
+                <label class="miFuente form-label" asp-for="FechaInicio"></label>
+                <input asp-for="FechaInicio" class="form-control" placeholder="dd/mm/aaaa"></input>
+                <span asp-validation-for="FechaInicio" class="text-light"></span>
+            </div>
+
+            @*Fecha Final*@
+            <div class="mb-3">
+                <label class="miFuente form-label" asp-for="FechaFinal"></label>
+                <input asp-for="FechaFinal" class="form-control" placeholder="dd/mm/aaaa"></input>
+                <span asp-validation-for="FechaFinal" class="text-light"></span>
+            </div>
+        </div>
+
+        <div class="col">
+            @*Precio Entrada*@
+            <div class="mb-3">
+                <label class="miFuente form-label" asp-for="PrecioDeEntrada"></label>
+                <input asp-for="PrecioDeEntrada" class="form-control" placeholder="El evento puede o no tener costo por entrada"></input>
+                <span asp-validation-for="PrecioDeEntrada" class="text-light"></span>
+            </div>
+
+            @*Patrocinador*@
+            <div class="mb-3">
+                <label asp-for="PatrocinadorId" class="form-label miFuente"></label>
+                <select asp-for="PatrocinadorId" asp-items="Model.PatrocinadorList" class="form-select"></select>
+                <span asp-validation-for="PatrocinadorId" class="text-danger"></span>
+            </div>
+
+            @*Descripcion*@
+            <div class="mb-3 mt-3">
+                <label class="miFuente" asp-for="Descripcion"></label>
+                <textarea asp-for="Descripcion" class="form-control" type="text" placeholder="Descripcion general del evento"></textarea>
+            </div>
+
+            <button class="btn botones_estilo_2" type="submit">Guardar <i class="bi bi-save"></i></button>
+            <a asp-action="Index" class="btn botones_estilo_1" style="margin-left:2rem;">Cancelar <i class="bi bi-backspace-fill"></i></a>
+        </div>
+    </div>
+</form>
+
+

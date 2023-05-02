@@ -106,5 +106,23 @@ namespace SistemaGestionEventos.Servicios
             using var connection = new SqlConnection(connectionString);
             await connection.ExecuteAsync("DELETE Eventos WHERE Id = @Id", new { id });
         }
+
+        //Editar un evento
+        public async Task Editar (EventoCrearViewModel modelo) 
+        {
+            using var connection = new SqlConnection(connectionString);
+            await connection.ExecuteAsync
+                (@"UPDATE Eventos
+	                SET UsuarioId = @UsuarioId,
+		                Nombre = @Nombre,
+		                UbicacionId = @UbicacionId,
+		                TipoEventoId = @TipoEventoId,
+		                FechaInicio = @FechaInicio,
+		                FechaFinal = @FechaFinal,
+		                PrecioDeEntrada = @PrecioDeEntrada,
+		                PatrocinadorId = @PatrocinadorId,
+		                Descripcion = @Descripcion
+	                WHERE Id = @Id", modelo);
+        }
     }
 }

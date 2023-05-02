@@ -52,6 +52,20 @@ img {
     background: linear-gradient(90deg, rgba(166,10,51,1) 0%, rgba(24,191,191,1) 180%);
 }
 
+.sombreadoBackground {
+    background: rgb(255,255,255);
+    background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(166,10,51,1) 200%);
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 20%;
+}
+
+.sombreadoBackground_2 {
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(166,10,51,1) 100%);
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 20%;
+}
+
 .img_box_Circular_1 {
     border-radius: 50%;
     border: 10px solid #A60A33;
@@ -68,6 +82,7 @@ img {
     border-bottom-right-radius: 0;
     border: 10px solid #8E41A3;
     box-shadow: -7px 7px 7px #361e41;
+    margin-left: -1.5rem;
 }
 
 .img_box_2 {
@@ -77,6 +92,7 @@ img {
     border-bottom-left-radius: 0;
     border: 10px solid #D160F0;
     box-shadow: 7px 7px 7px #361e41;
+    margin-right: -1.5rem;
 }
 
 .img_box_3 {
@@ -87,6 +103,7 @@ img {
     border-bottom-right-radius: 0;
     border: 10px solid #8E41A3;
     box-shadow: -7px 7px 7px #361e41;
+    margin-left: -1.5rem;
 }
 
 .img_box_4 {
@@ -97,6 +114,7 @@ img {
     border-bottom-left-radius: 0;
     border: 10px solid #D160F0;
     box-shadow: 7px 7px 7px #361e41;
+    margin-right: -1.5rem;
 }
 
 .logoEventCentral {

@@ -5,7 +5,7 @@
 
 <div class="encabezado_box row">
     <h1 class="col miFuente tamaño_Titulos mt-5 mb-5 centrarHorizontal">
-        Edicion de la ubicacion <i class="bi bi-geo-alt-fill"></i>
+        Edicion de la ubicacion <i class="bi bi-geo-alt-fill"></i> <i class="bi bi-pen-fill"></i>
     </h1>
 </div>
 
@@ -48,7 +48,7 @@
             @*Servicios*@
             <div class="mb-3 mt-3">
                 <label class="miFuente form-label" asp-for="Servicios"></label>
-                <input asp-for="Servicios" class="form-control" placeholder="Servicios disponibles"></input>
+                <textarea asp-for="Servicios" class="form-control" type="text" placeholder="Servicios disponibles"></textarea>
                 <span asp-validation-for="Servicios" class="text-light"></span>
             </div>
 
