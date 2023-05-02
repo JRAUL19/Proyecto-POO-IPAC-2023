@@ -41,7 +41,7 @@
             <th>Capacidad</th>
             <th>Servicios</th>
             <th>Descripcion</th>
-            <th>Edicion</th>
+            <th class="centrarHorizontal"><i class="bi bi-gear-wide-connected"></i></th>
         </tr>
     </thead>
     <tbody>
@@ -59,7 +59,7 @@
                 <td>@ubicacion.CapacidadPersonas</td>
                 <td>@ubicacion.Servicios</td>
                 <td>@ubicacion.Descripcion</td>
-                <td>
+                <td class="centrarHorizontal">
                     <input type="hidden" asp-for="@ubicacion.Id" class="ids" />
                     <a asp-action="Editar" asp-route-id="@ubicacion.Id" class="btn miFuente"><i class="bi bi-pen-fill"></i></a>
                     <a asp-action="Eliminar" asp-route-id="@ubicacion.Id" class="btn miFuente"><i class="bi bi-trash3-fill"></i></a>

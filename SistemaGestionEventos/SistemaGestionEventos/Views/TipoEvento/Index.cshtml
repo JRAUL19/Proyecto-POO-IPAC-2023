@@ -30,7 +30,7 @@
             <th>Codigo</th>
             <th>Nombre</th>
             <th>Descripcion</th>
-            <th>Edicion</th>
+            <th class="centrarHorizontal"><i class="bi bi-gear-wide-connected"></i></th>
         </tr>
     </thead>
     <tbody>
@@ -40,7 +40,7 @@
                 <td>@tipoEvento.Id</td>
                 <td>@tipoEvento.Nombre</td>
                 <td>@tipoEvento.Descripcion</td>
-                <td>
+                <td class="centrarHorizontal">
                     <input type="hidden" asp-for="@tipoEvento.Id" class="ids" />
                     <a asp-action="Editar" asp-route-id="@tipoEvento.Id" class="btn miFuente"><i class="bi bi-pen-fill"></i></a>
                     <a asp-action="Eliminar" asp-route-id="@tipoEvento.Id" class="btn miFuente"><i class="bi bi-trash3-fill"></i></a>

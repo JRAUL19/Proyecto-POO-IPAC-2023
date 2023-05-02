@@ -110,6 +110,21 @@ img {
     background: rgb(142,65,163);
     background: linear-gradient(60deg, rgba(142,65,163,1) 0%, rgba(30,255,234,1) 200%);
     border-radius: 10px;
+    box-shadow: -5px 5px 5px #361e41;
+}
+
+.encabezado_box_2 {
+    background: rgb(166,10,51);
+    background: linear-gradient(47deg, rgba(166,10,51,1) 0%, rgba(231,9,144,1) 200%);
+    border-radius: 10px;
+    box-shadow: -5px 5px 5px #361e41;
+}
+
+.encabezado_box_3 {
+    background: rgb(166,10,51);
+    background: linear-gradient(47deg, rgba(166,10,51,1) 0%, rgba(231,143,9,1) 200%);
+    border-radius: 10px;
+    box-shadow: -5px 5px 5px #361e41;
 }
 
 .botones_estilo_1 {

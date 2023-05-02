@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Eventos - Index";
+}
+@model IEnumerable<Evento>
+
+@*Titulos de presentacion*@
+<div class="row miFuente mb-5 mt-5">
+    <div class="col centrarHorizontal">
+        <div>
+            <div>
+                <img src="~/media/logo-EventCentral.png" class="img_box_Circular_1"></img>
+            </div>
+            <h4 class="tamaño_SubTitulos">Mis eventos</h4>
+            <h4 class="tamaño_Texto">Crea, gestiona y personaliza tus eventos</h4>
+        </div>
+    </div>
+</div>
+
+
+@*Boton nuevo evento*@
+<div class="mt-5 miFuente mt-5 mb-5">
+    <h4 class="tamaño_SubTitulos">Crea un nuevo evento</h4>
+    <a asp-action="Crear" class="btn botones_estilo_2">Crear <i class="bi bi-plus-circle-dotted"></i> </a>
+</div>
+
+@*Tabla de eventos*@
+<table class="table estilo_tabla mt-5 mb-5">
+    <thead>
+        <tr>
+            <th class="centrarHorizontal">Codigo</th>
+            @*<th>Usuario</th>*@
+            <th>Nombre</th>
+            <th>Ubicacion</th>
+            <th>Tipo</th>
+            <th>Inicio</th>
+            <th>Final</th>
+            <th>Costo</th>
+            <th>Patrocinador</th>
+            <th>Descripcion</th>
+            <th class="centrarHorizontal"><i class="bi bi-gear-wide-connected"></i></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var evento in Model)
+        {
+            <tr>
+                <td class="centrarHorizontal">@evento.Id</td>
+                @*<td>@evento.Usuarios</td>*@
+                <td>@evento.Nombre</td>
+                <td>@evento.Ubicaciones</td>
+                <td>@evento.TiposEventos</td>
+                <td>@evento.FechaInicio</td>
+                <td>@evento.FechaFinal</td>
+                <td>@evento.PrecioDeEntrada</td>
+                <td>@evento.Patrocinadores</td>
+                <td>@evento.Descripcion</td>
+                <td>
+                    <input type="hidden" asp-for="@evento.Id" class="ids" />
+                    <a asp-action="Editar" asp-route-id="@evento.Id" class="btn miFuente"><i class="bi bi-pen-fill"></i></a>
+                    <a asp-action="Eliminar" asp-route-id="@evento.Id" class="btn miFuente"><i class="bi bi-trash3-fill"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

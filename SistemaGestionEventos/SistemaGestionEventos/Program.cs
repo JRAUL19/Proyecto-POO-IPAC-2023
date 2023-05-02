@@ -10,6 +10,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IRepositorioTipoEvento, RepositorioTipoEvento>();
 builder.Services.AddTransient<IRepositorioUbicacion, RepositorioUbicacion>();
 builder.Services.AddTransient<IRepositorioPatrocinador, RepositorioPatrocinador>();
+builder.Services.AddTransient<IRepositorioEvento, RepositorioEvento>();
 
 //Paquete Nuget AutoMapper
 builder.Services.AddAutoMapper(typeof(Program));

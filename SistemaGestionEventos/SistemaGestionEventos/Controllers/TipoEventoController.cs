@@ -3,11 +3,13 @@ using Azure.Core;
 using Microsoft.AspNetCore.Mvc;
 using SistemaGestionEventos.Models;
 using SistemaGestionEventos.Servicios;
+using System.Reflection;
 
 namespace SistemaGestionEventos.Controllers
 {
     public class TipoEventoController : Controller
     {
+        private readonly ILogger<HomeController> _logger;
         private readonly IRepositorioTipoEvento repositorioTipoEvento;
         private readonly IMapper mapper;
 
@@ -15,12 +17,14 @@ namespace SistemaGestionEventos.Controllers
         public TipoEventoController(
             IRepositorioTipoEvento repositorioTipoEvento,
             IMapper mapper
-            )
+,
+            ILogger<HomeController> logger)
         {
             this.repositorioTipoEvento = repositorioTipoEvento;
             this.mapper = mapper;
+            _logger = logger;
         }
-        
+
         //Vista principal
         public async Task<IActionResult> Index() 
         {
@@ -32,6 +36,7 @@ namespace SistemaGestionEventos.Controllers
         [HttpGet]
         public IActionResult Crear() 
         {
+            
             return View();
         }
 
@@ -50,6 +55,9 @@ namespace SistemaGestionEventos.Controllers
                 ModelState.AddModelError(nameof(tipoEvento.Nombre), $"El nombre {tipoEvento.Nombre} ya existe");
                 return View(tipoEvento);
             }
+
+            _logger.LogInformation("Modelo recibido: {Modelo}", tipoEvento.Nombre);
+
 
             await repositorioTipoEvento.Crear(tipoEvento);
             return RedirectToAction("Index");   
