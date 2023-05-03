@@ -23,6 +23,7 @@ namespace SistemaGestionEventos.Models
         [Display(Name ="Capacidad de personas del lugar")]
         [Required(ErrorMessage = "La {0} es requerida")]
         [StringLength(maximumLength:100)]
+        [RegularExpression(@"^\d+$", ErrorMessage = "El campo {0} solo permite números enteros.")]
         public string CapacidadPersonas { get; set; }
 
         [Display(Name = "Servicios que ofrece el lugar")]

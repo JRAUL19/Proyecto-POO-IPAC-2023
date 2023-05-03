@@ -46,6 +46,8 @@ namespace SistemaGestionEventos.Models
 
         [Display(Name ="Precio de entrada")]
         [Required(ErrorMessage = "El {0} es requerido en caso de no tener costo coloque 0")]
+        [RegularExpression(@"^\d+(\.\d+)?$",
+            ErrorMessage = "El campo {0} solo permite números enteros o decimales.")]
         public decimal PrecioDeEntrada { get; set; }
 
         //id patrocinador y nombre
